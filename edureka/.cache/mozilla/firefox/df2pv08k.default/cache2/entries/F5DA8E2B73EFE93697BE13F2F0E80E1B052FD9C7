@@ -1,0 +1,836 @@
+{
+    "common": {
+        "cancel": "Cancel",
+        "ok": "Ok",
+        "errorHeader": "An error occurred",
+        "unknownError": "Unknown error"
+    },
+    "navigation": {
+        "ec2": "EC2",
+        "settings": "Settings",
+        "settingsEbs": "Settings - EBS encryption",
+        "settingsExperiments": "Settings - Console experiments",
+        "settingsZones": "Settings - Zones",
+        "settingsDefaultCreditSpecification": "Settings - Default credit specification",
+        "settingsEC2SerialConsole": "Settings - EC2 Serial Console",
+        "ebsEncryption": "EBS Encryption",
+        "modifyEBSEncryption": "Modify EBS encryption",
+        "consoleExperiments": "Console Experiments",
+        "modifyExperiments": "Modify experiments",
+        "zones": "Zones",
+        "manageZoneGroup": "Manage zone group",
+        "manage": "Manage",
+        "dashboard": "Dashboard",
+        "defaultCreditSpecification": "Default credit specification",
+        "manageDefaultCreditSpecification": "Manage default credit specification",
+        "ec2SerialConsole": "EC2 Serial Console",
+        "manageEC2SerialConsole": "Manage EC2 Serial Console"
+    },
+    "helpPanel": {
+        "defaultContent": {
+            "content": {
+                "defaultDocLinkText": "Read the documentation",
+                "infoText": "Info",
+                "learnMoreText": "Learn more"
+            },
+            "fallback": {
+                "body": "The content is not available.",
+                "docLinkText": "Read the documentation",
+                "title": "Content unavailable"
+            }
+        },
+        "staticContent": {
+            "Home": {
+                "content": {
+                    "title": "EC2 Dashboard",
+                    "body": "Welcome to the EC2 Dashboard."
+                },
+                "sections": {
+                    "filter": {
+                        "title": "Filtering resources",
+                        "body": [
+                            "You can filter your resources by the tags that are assigned to them. The filter is applied to all resources types in the Region. \n\nTo filter on a tag, specify the tag key and tag value separated by a colon. For example, to filter for resources that have a tag key of “purpose” and value of “production” (purpose=production), enter “purpose: production”. \n\nIf the tag key includes a colon, you must escape the colon with a backslash (\\). For example, to filter for resources that have a tag key of “team:owner” and a value of “devteam” (team:owner=devteam), enter “team\\:owner: devteam”. \n\nYou can also use the “*” and “?” wildcards in your filters. “?” is a single character wildcard that matches zero or one character. “*” is a multiple character wildcard that matches one or more characters. For example, if you have the following tags: “purpose=prod”, “purpose=prods”, and “purpose=production”, then “purpose: prod*” would match all of the tags, and “purpose: prod?” would match only “purpose=prod” and “purpose=prods”."
+                        ],
+                        "docLinks": ["Read the documentation"]
+                    }
+                }
+            },
+            "Settings": {
+                "content": {
+                    "title": "Settings",
+                    "body": "Make changes to your console settings here."
+                },
+                "sections": {
+                    "encryption": {
+                        "title": "EBS Encryption",
+                        "body": [
+                            "If Encryption is enabled, all new EBS volumes and copies of snapshots created in your account will be encrypted by default. Your volumes will be encrypted to the master key specified here, unless you specify a different key at launch time."
+                        ],
+                        "docLinks": ["Amazon EBS encryption"]
+                    },
+                    "consoleExperiments": {
+                        "title": "Console experiments",
+                        "body": [
+                            "If your account has a large number of snapshots, you can enable this feature to improve the experience of viewing snapshots in the Snapshots screen. If enabled, sorting will be disabled and filtering options will be limited."
+                        ],
+                        "docLinks": ["Amazon EBS snapshots"]
+                    },
+                    "resumeSession": {
+                        "title": "Resume console session",
+                        "body": ["Open the console on a specific page or where you recently left off."]
+                    },
+                    "zones": {
+                        "title": "Zone Settings",
+                        "body": [
+                            "Zone settings allow you to enable and disable the Local and Wavelength zones you are using in a specific AWS Region. <h3>Zone types</h3> Use the Table selector to filter to a specific zone type to view and change the current opt-in status of a zone. <h4>Availability Zone</h4> An Availability Zone is a distinct location within a Region that is insulated from failures in other Availability Zones, and provides inexpensive, low-latency network connectivity to other Availability Zones in the same Region. <h4>Local Zone</h4> A Local Zone is an extension of an AWS Region in geographic proximity to your users. Local Zones have their own connections to the internet and support AWS Direct Connect, so resources created in a Local Zone can serve local users with very low-latency communications. <h4>Wavelength Zone</h4> Wavelength Zones are AWS infrastructure deployments that embed AWS compute and storage services within telecommunications providers’ datacenters at the edge of the 5G network, so application traffic can reach application servers running in Wavelength Zones without leaving the mobile providers’ network."
+                        ],
+                        "docLinks": ["Regions and zones"]
+                    },
+                    "availabilityZones": {
+                        "title": "Availability Zones",
+                        "body": [
+                            "An Availability Zone is a distinct location within a Region that is insulated from failures in other Availability Zones, and provides inexpensive, low-latency network connectivity to other Availability Zones in the same Region."
+                        ],
+                        "docLinks": ["Regions and zones"]
+                    },
+                    "localZones": {
+                        "title": "Local Zones",
+                        "body": [
+                            "A Local Zone is an extension of an AWS Region in geographic proximity to your users. Local Zones have their own connections to the internet and support AWS Direct Connect, so resources created in a Local Zone can serve local users with very low-latency communications."
+                        ],
+                        "docLinks": ["Regions and zones"]
+                    },
+                    "wavelengthZones": {
+                        "title": "Wavelength Zones",
+                        "body": [
+                            "Wavelength Zones are AWS infrastructure deployments that embed AWS compute and storage services within telecommunications providers’ datacenters at the edge of the 5G network, so application traffic can reach application servers running in Wavelength Zones without leaving the mobile providers’ network."
+                        ],
+                        "docLinks": ["Regions and zones"]
+                    },
+                    "defaultCreditSpecification": {
+                        "title": "Default credit specification",
+                        "body": [
+                            "Unlimited is only available for T2, T3, T3a and T4g instances. Enabling Unlimited allows applications to burst beyond for as long as needed at any time. If the average CPU utilization is at or below he baseline, the hourly instance price automatically covers all usage. Otherwise, all usage above baseline is billed."
+                        ],
+                        "docLinks": ["Burstable performance instances"]
+                    },
+                    "ec2SerialConsole": {
+                        "title": "EC2 Serial Console",
+                        "body": [
+                            "The EC2 serial console provides access to your Amazon EC2 instance's serial port. You can use the serial console to troubleshoot boot, network configuration, and other issues. The serial console does not require your instance to have any networking capabilities. On the serial console, you can enter commands to an instance as if your keyboard and monitor are directly attached to the instance's serial port. \n\nBefore you can use the serial console of an instance, you need to do the following: \n\n• Launch the instance using a supported instance type. \n• Configure access to the EC2 Serial Console."
+                        ],
+                        "docLinks": ["EC2 Serial Console"]
+                    }
+                }
+            },
+            "ModifyEBSEncryption": {
+                "content": {
+                    "title": "Settings",
+                    "body": "Make changes to your console settings here."
+                },
+                "sections": {
+                    "encryption": {
+                        "title": "EBS Encryption",
+                        "body": [
+                            "If encryption is enabled, all new EBS volumes and copies of snapshots created in your account will be encrypted by default. Your volumes will be encrypted to the master key specified here, unless you specify a different key at launch time."
+                        ],
+                        "docLinks": ["Amazon EBS encryption"]
+                    }
+                }
+            },
+            "ModifyExperiments": {
+                "content": {
+                    "title": "Settings",
+                    "body": "Make changes to your console settings here."
+                },
+                "sections": {
+                    "consoleExperiments": {
+                        "title": "Console experiments",
+                        "body": [
+                            "If your account has a large number of snapshots, you can enable this feature to improve the experience of viewing snapshots in the Snapshots screen. If enabled, sorting will be disabled and filtering options will be limited."
+                        ],
+                        "docLinks": ["Amazon EBS snapshots"]
+                    }
+                }
+            },
+            "ManageZoneGroup": {
+                "content": {
+                    "title": "Settings",
+                    "body": "Make changes to your console settings here."
+                },
+                "sections": {
+                    "localZones": {
+                        "title": "Local Zones",
+                        "body": [
+                            "A Local Zone is an extension of an AWS Region in geographic proximity to your users. Local Zones have their own connections to the internet and support AWS Direct Connect, so resources created in a Local Zone can serve local users with very low-latency communications."
+                        ],
+                        "docLinks": ["Regions and zones"]
+                    },
+                    "wavelengthZones": {
+                        "title": "Wavelength Zones",
+                        "body": [
+                            "Wavelength Zones are AWS infrastructure deployments that embed AWS compute and storage services within telecommunications providers’ datacenters at the edge of the 5G network, so application traffic can reach application servers running in Wavelength Zones without leaving the mobile providers’ network."
+                        ],
+                        "docLinks": ["Regions and zones"]
+                    }
+                }
+            },
+            "ManageDefaultCreditSpecification": {
+                "content": {
+                    "title": "Settings",
+                    "body": "Make changes to your console settings here."
+                },
+                "sections": {
+                    "defaultCreditSpecification": {
+                        "title": "Default credit specification",
+                        "body": [
+                            "Unlimited is only available for T2, T3, T3a and T4g instances. Enabling Unlimited allows applications to burst beyond for as long as needed at any time. If the average CPU utilization is at or below he baseline, the hourly instance price automatically covers all usage. Otherwise, all usage above baseline is billed."
+                        ],
+                        "docLinks": ["Burstable performance instances"]
+                    }
+                }
+            },
+            "ManageEC2SerialConsole": {
+                "content": {
+                    "title": "Settings",
+                    "body": "Make changes to your console settings here."
+                },
+                "sections": {
+                    "ec2SerialConsole": {
+                        "title": "EC2 Serial Console",
+                        "body": [
+                            "The EC2 serial console provides access to your Amazon EC2 instance's serial port. You can use the serial console to troubleshoot boot, network configuration, and other issues. The serial console does not require your instance to have any networking capabilities. On the serial console, you can enter commands to an instance as if your keyboard and monitor are directly attached to the instance's serial port. \n\nBefore you can use the serial console of an instance, you need to do the following: \n\n• Launch the instance using a supported instance type. \n• Configure access to the EC2 Serial Console."
+                        ],
+                        "docLinks": ["EC2 Serial Console"]
+                    }
+                }
+            }
+        }
+    },
+    "dashboard": {
+        "welcome": {
+            "title": "Welcome to the new EC2 console!",
+            "body": "We’re redesigning the EC2 console to make it easier to use and improve performance. We’ll release new screens periodically. We encourage you to try them and let us know where we can make improvements. To switch between the old console and the new console, use the New EC2 Experience toggle."
+        },
+        "resources": {
+            "title": "Resources",
+            "subtitle": "You are using the following Amazon EC2 resources in the ${region} Region:",
+            "error": "An error occurred while retrieving information about your EC2 resources",
+            "apiError": "API Error",
+            "notSupported": "Not supported",
+            "filterPlaceholder": "Filter resources by tag(s)",
+            "instances": "Instances",
+            "runningInstances": "Instances (running)",
+            "hosts": "Dedicated Hosts",
+            "volumes": "Volumes",
+            "keyPairs": "Key pairs",
+            "placementGroups": "Placement groups",
+            "addresses": "Elastic IPs",
+            "snapshots": "Snapshots",
+            "loadBalancers": "Load balancers",
+            "securityGroups": "Security groups",
+            "launchTemplates": "Launch templates",
+            "reservedInstances": "Reserved Instances",
+            "globalView": "EC2 Global view"
+        },
+        "resourceSettingsModal": {
+            "title": "Resource settings",
+            "visibleResources": {
+                "title": "Visible resources",
+                "description": "Choose only the resources you want to be visible in the dashboard."
+            }
+        },
+        "createInstance": {
+            "title": "Launch instance",
+            "subtitle": "To get started, launch an Amazon EC2 instance, which is a virtual server in the cloud.",
+            "launch": "Launch instance",
+            "launchFromTemplate": "Launch instance from template",
+            "note": "Note: Your instances will launch in the ${region} Region"
+        },
+        "migrateMachine": {
+            "title": "Migrate a server",
+            "subtitle": "Use AWS Application Migration Service to simplify and expedite migration from physical, virtual, and cloud infrastructure to AWS.",
+            "link": "Get started with AWS Application Migration Service",
+            "launch_link": "Migrate a server"
+        },
+        "quickFilter": {
+            "title": "Quick ID filter",
+            "placeholder": "Enter a resource ID",
+            "idLengthInvalid": "ID invalid",
+            "createFilter": "Create filter",
+            "useFilterFor": "Use filter for ${message}",
+            "resourceMessages": {
+                "Instances": "instances",
+                "Hosts": "Dedicated Hosts",
+                "Images": "images",
+                "publicImages": "public images",
+                "myImages": "my images",
+                "privateImages": "private images",
+                "BundleTasks": "bundle tasks",
+                "Volumes": "volumes",
+                "Snapshots": "snapshots",
+                "SecurityGroups": "security groups",
+                "Addresses": "Elastic IPs",
+                "NIC": "network interfaces",
+                "publicSnapshots": "public snapshots",
+                "mySnapshots": "my snapshots",
+                "privateSnapshots": "private snapshots",
+                "vpcs": "VPCs",
+                "subnets": "subnets",
+                "RouteTables": "route tables",
+                "igws": "internet gateways",
+                "EgressOnlyInternetGateways": "egress-only internet gateways",
+                "dhcpOptions": "DHCP option sets",
+                "Endpoints": "VPC endpoints",
+                "EndpointServices": "VPC endpoint services",
+                "NatGateways": "NAT gateways",
+                "PeeringConnections": "peering connections",
+                "acls": "network ACLs",
+                "CustomerGateways": "customer gateways",
+                "VpnGateways": "virtual private gateways",
+                "VpnConnections": "VPN connections"
+            }
+        },
+        "scheduledEvents": {
+            "title": "Scheduled events",
+            "instances": "${count} instance(s) have scheduled events",
+            "volumesImpaired": "${count} volume(s) are impaired",
+            "volumesDegraded": "${count} volume(s) have degraded performance",
+            "noScheduledEvents": "No scheduled events",
+            "error": "There was an error while checking for scheduled events"
+        },
+        "supportEverywhere": {
+            "title": "Help topics",
+            "error": "There was an error loading the widget."
+        },
+        "serviceHealth": {
+            "title": "Service health",
+            "availabilityZoneStatus": "Availability Zone status",
+            "zoneStatus": "Zone status",
+            "region": "Region",
+            "regionStatus": {
+                "normal": "This service is operating normally",
+                "alarm": "The service is in alarm",
+                "unknown": "Unknown response received from status service"
+            },
+            "zoneName": "Zone name",
+            "zoneId": "Zone ID",
+            "zones": "Zones",
+            "status": "Status",
+            "availabilityZoneOperatingNormally": "Availability Zone is operating normally",
+            "zoneOperatingNormally": "Zone is operating normally",
+            "serviceHealthDashboard": "AWS Health Dashboard",
+            "error": "An error occurred retrieving service health information",
+            "enableTitans": "Enable additional Zones"
+        },
+        "accountAttributes": {
+            "title": "Account attributes",
+            "supportedPlatforms": {
+                "title": "Supported platforms",
+                "error": "An error occurred retrieving supported platforms"
+            },
+            "defaultVpc": {
+                "title": "Default VPC",
+                "error": "An error occurred checking for a default VPC"
+            },
+            "bigIdManagement": "Resource ID length management",
+            "consoleExperiments": "Console experiments",
+            "settings": "Settings"
+        },
+        "additionalInformation": {
+            "title": "Additional information",
+            "gettingStarted": "Getting started guide",
+            "documentation": "Documentation",
+            "resources": "All EC2 resources",
+            "forums": "Forums",
+            "forumsEnglishOnly": "Forums (English only)",
+            "pricing": "Pricing",
+            "contactUs": "Contact us"
+        },
+        "targetedMessaging": {
+            "title": "Explore AWS",
+            "dismiss": "Dismiss"
+        },
+        "applicationWizardAds": {
+            "appWizardMarketingMessage": "Easily size, configure, and deploy Microsoft SQL Server Always On availability groups on AWS using the AWS Launch Wizard for SQL Server. <a href='${link}' target='_blank'>Learn more</a>",
+            "dashboardMarketingLink": "Learn more about the latest in AWS Compute from AWS re:Invent by viewing the <a href='${link}' target='_blank'>EC2 Videos</a>."
+        },
+        "ebsBronxPreview": {
+            "bronxPreviewMessage": "Your account in ${region} is enabled for io2 Block Express in preview. For additional details please click",
+            "here": "here"
+        },
+        "cpuUtilization": {
+            "title": "CPU Utilization",
+            "subtitle": "Overall average CPU utilization across all EC2 instances",
+            "cloudwatchDashboard": "View in CloudWatch"
+        },
+        "ec2ClassicAlert": {
+            "ec2ClassicWarningMessage": "This account has EC2-Classic Networking enabled for one or more AWS regions. <b>AWS will be retiring the EC2-Classic Platform on August 15, 2022.</b> To avoid interruptions to your workloads, we recommend that you migrate instances and other AWS resources running on EC2-Classic over to VPC prior to August 15, 2022. For more details on important dates and resources to help you migrate, see ",
+            "ec2ClassicDeprecationDate": "Starting <b>October 30, 2021,</b> AWS will turn off EC2-Classic from accounts across all Classic regions where you do not currently have any active AWS resources. AWS Classic Resources include: EC2 Instances, Amazon Relational Database, AWS Elastic Beanstalk, Amazon Redshift, AWS Data Pipeline, Amazon EMR, AWS OpsWorks.",
+            "policyPage": "Policy page"
+        }
+    },
+    "settings": {
+        "tabs": {
+            "ebsEncryption": "EBS encryption",
+            "consoleExperiments": "Console experiments",
+            "zones": "Zones",
+            "defaultCreditSpecification": "Default credit specification",
+            "ec2SerialConsole": "EC2 Serial Console"
+        },
+        "ebsEncryption": {
+            "title": "EBS encryption",
+            "subtitle": "Set the default encryption status of all new EBS volumes and copies of snapshots created in your account.",
+            "encryption": "Encryption",
+            "defaultEncryptionKey": "Default encryption key",
+            "defaultEncrpytionKeyDesc": "Specify the master key to encrypt your volumes.",
+            "alwaysEncrypt": "Always encrypt new EBS volumes",
+            "alwaysEncryptDesc": "Enables encryption by default for newly created EBS volumes and snapshots.",
+            "loadingArn": "Loading ARN",
+            "loadingAliases": "Loading aliases",
+            "errorLoadingKeys": "Error loading keys",
+            "ebsError": "An error occurred loading EBS encryption information. Please refresh or try again later.",
+            "kmsError": "An error occurred loading KMS key information. Please refresh or try again later.",
+            "setEncryptionKey": "Set Encryption Key",
+            "copyKey": "Copy",
+            "keyCopied": "Key ARN copied",
+            "alert": "The settings above only apply to the ${region} region. Choose another region to change the settings for that region. You can only launch instance types that support EBS encryption once you enable account level encryption.",
+            "learnMore": "Learn more about supported instance types.",
+            "settingsSavedAlert": "Your EBS Encryption settings have been saved successfully.",
+            "settingsNotSavedAlert": "There was a problem updating your settings.",
+            "kmsKeyReset": "There was a problem updating your key.",
+            "enableEbsAlert": "Please enable EBS encryption before changing your default key.",
+            "pleaseRefresh": "An error occurred loading the data. Please refresh to try again.",
+            "noMatchingKeyFound": "No matching key found",
+            "defaultEncryptionKeyEmpty": "Default encryption key cannot be empty.",
+            "enable": "Enable",
+            "enabled": "Enabled",
+            "disabled": "Disabled",
+            "buttons": {
+                "submit": "Update EBS encryption",
+                "cancel": "Cancel"
+            }
+        },
+        "zones": {
+            "title": "Zones",
+            "allZones": "All Zones",
+            "zonesSettings": "Zone settings",
+            "availabilityZoneSettings": "Availability Zone settings",
+            "description": "This screen lists the Zones for the current AWS Region, <b>${regionName} (${regionLocation})</b>. Availability Zones are enabled by default. To use a zone, you must enable its Zone Group.",
+            "cardDescription": "All ${zoneType} for AWS Region, <b>${regionName} (${regionLocation})</b>.",
+            "regionDescription": "Currently showing AWS Region ${regionName} (${regionLocation}).",
+            "alert": "Switch regions to manage Zones for a different region.",
+            "status": "Status",
+            "pilot": "Pilot",
+            "manageZone": "Manage Zone",
+            "availabilityZones": {
+                "groupTitle": "Availability Zones",
+                "groupTitleSingular": "Availability Zone",
+                "description": "All Availability Zones for AWS Region, <b>${regionName} (${regionLocation})</b>.",
+                "zoneTitle": "Availability Zones",
+                "defaultZones": "Default Availability Zones",
+                "enabledByDefault": "Enabled by default",
+                "error": "An error occurred retrieving Availability Zone information"
+            },
+            "localZones": {
+                "groupTitle": "Local Zones",
+                "groupTitleSingular": "Local Zone",
+                "description": "All Local Zones for AWS Region, <b>${regionName} (${regionLocation})</b>. Select a different AWS Region to manage Local Zones there.",
+                "zoneTitle": "Zones",
+                "enabled": "Enabled",
+                "disabled": "Disabled",
+                "manage": "Manage local zones"
+            },
+            "manageOptInStatus": {
+                "optInStatus": "Opt-in Status",
+                "loading": "Modification request in progress.",
+                "success": "Successfully updated opt-in status.",
+                "successSpecific": "Successfully updated opt-in status of ${zoneType} - ${zoneLocation}.",
+                "error": {
+                    "updatingZone": "Error updating zone.",
+                    "cantDisable": "To disable a Zone Group, you must contact AWS Supoort.",
+                    "invalidZone": "Invalid zone selected to modify.",
+                    "error": "Error:"
+                },
+                "enable": "Enable",
+                "button": {
+                    "cancel": "Cancel",
+                    "update": "Update"
+                },
+                "modal": {
+                    "disabled": {
+                        "header": "Disable Zone Group",
+                        "content": "To disable a Zone Group, you must contact <a href='${link}' target='_blank'>AWS Support</a>. To ensure that your request is completed as quickly as possible:<ol><li>Remove all resources from the zones in the Zone Group.</li><li>Open an AWS Support case titled <i>‘Disable Zone Group’</i>.</ol>After you disable a Zone Group, existing resources in its Zones continue to run and incur charges until you stop, terminate, or delete them."
+                    },
+                    "enabled": {
+                        "header": "Enable Zone Group",
+                        "content": "Are you sure you want to enable <b>${regionName} (${regionLocation})</b> Zone Group? To disable zones after you have enabled them, you must contact <a href='${link}' target='_blank'>AWS Support</a>.",
+                        "frictionLabel": "To confirm, type <i>Enable</i> in the field below.",
+                        "frictionText": "Enable"
+                    }
+                },
+                "actionResults": {
+                    "success": {
+                        "headerText": "Success. The ${regionName} (${groupName}) zone group has been updated. It may take up to a minute for the changes to take effect."
+                    },
+                    "failed": {
+                        "headerText": "There was a problem updating the zone group."
+                    }
+                }
+            },
+            "wavelengthZones": {
+                "groupTitle": "Wavelength Zones",
+                "groupTitleSingular": "Wavelength Zone",
+                "description": "All Wavelength Zones for AWS Region, <b>${regionName} (${regionLocation})</b>. Select a different AWS Region to manage Wavelength Zones there.",
+                "zoneTitle": "Wavelength Zones",
+                "enabled": "Enabled",
+                "disabled": "Disabled",
+                "requestAccess": "Request access",
+                "manage": "Manage wavelength zones"
+            },
+            "zoneGroup": {
+                "title": "Zone group",
+                "subtitle": "List of available zones and status for this zone group. Enable or disable the zone group by selecting the settings below.",
+                "alertHeader": "The zone group may contain resources",
+                "alertBody": "Before disabling this zone group make sure you remove all associated resources",
+                "alertError": "An error occured loading zone information",
+                "enabled": "Enabled",
+                "disabled": "Disabled",
+                "buttons": {
+                    "submit": "Update zone group",
+                    "cancel": "Cancel"
+                }
+            }
+        },
+        "consoleExperiments": {
+            "title": "Console experiments",
+            "subtitle": "You can use experimental settings to test features that are still in development. Note that these might change, or be removed.",
+            "availableExperiments": "Available experiments",
+            "alert": "These settings apply only to the current region. Experiments are available in limited regions.",
+            "compactTableMode": "Compact table rows",
+            "compactTableDescription": "This setting decreases the row height in resource tables. This maximizes the number of resources that can be displayed.",
+            "optimizeSnapshots": "Optimize snapshots screen for large data",
+            "enableOptimizedView": "Enable an optimized view of the EBS snapshot screen for accounts with large numbers of snapshots.",
+            "updateExperiments": "Update console experiments",
+            "settingsSavedAlert": "Your Console experiments settings have been saved successfully.",
+            "settingsNotSavedAlert": "There was a problem updating your settings.",
+            "enable": "Enable",
+            "enabled": "Enabled",
+            "disabled": "Disabled",
+            "buttons": {
+                "submit": "Update console experiments",
+                "cancel": "Cancel"
+            }
+        },
+        "resumeSessionSettings": {
+            "title": "Resume console session",
+            "subtitle": "When navigating to the console without a deeplink re-open the EC2 console according to these settings instead of loading the dashboard.",
+            "defaultLandingPageOption": "The default landing page",
+            "defaultLandingPageDescription": "Always resume sessions from the EC2 Dashboard.",
+            "specificLandingPageOption": "A specific page",
+            "specificLandingPageDescription": "Resume sessions from a specific page in the console.",
+            "resumeLastVisitedOption": "The last visited page",
+            "resumeLastVisitedDescription": "Resume sessions from the page that you last visited.",
+            "invalidPlaceError": "Invalid place",
+            "settingHeader": "Resume console session settings",
+            "headerDescription": "Specify how you would like your session to resume when returning to the EC2 console.",
+            "pageInputDescription": "Choose the page on which to resume console sessions.",
+            "pageInputLabel": "Resume page",
+            "resumeTypeInputLabel": "Resume console sessions from",
+            "resumeTypeInputDescription": "Choose the session resume behavior for the console.",
+            "showResumeMessageDescription": "Indicate whether the resume session message should be displayed when resuming a session.",
+            "showResumeMessageLabel": "Session resume message",
+            "localStorageDisableWarning": "Unable to read or write resume settings from local storage. Enable local storage in your browser and opt into the functional cookies preference to use this feature.",
+            "saveResumeSettings": "Apply",
+            "enable": "Enable",
+            "saveSuccessful": "Successfully updated resume console session settings."
+        },
+        "defaultCreditSpecification": {
+            "title": "Default credit specification",
+            "subtitle": "The default credit option for CPU usage of burstable performance instances, T2, T3, T3a and T4g. Here you can modify the specification.",
+            "manageTitle": "Manage default credit specification",
+            "manageDescription": "Enable advanced mode (burstable) for the available instances.",
+            "instance": "Instance",
+            "creditSpecification": "Credit specification",
+            "tInstances": "${instanceFamily} instances",
+            "T2Instances": "T2 instances",
+            "T3Instances": "T3 instances",
+            "T3aInstances": "T3a instances",
+            "T4gInstances": "T4g instances",
+            "standard": "Standard",
+            "unlimited": "Unlimited",
+            "getDCSError": "An error occurred loading default credit specification information. Please refresh or try again later.",
+            "settingsSavedAlert": "Success. Your default credit specification has been updated. It may take up to a minute for the changes to take effect.",
+            "settingsNotSavedAlert": "There was a problem updating your settings.",
+            "buttons": {
+                "update": "Update",
+                "cancel": "Cancel"
+            }
+        },
+        "serialConsole": {
+            "title": "EC2 Serial Console",
+            "subtitle": "Allow or prevent access to your EC2 instances via the EC2 Serial Console for your account.",
+            "ec2SerialConsole": "EC2 Serial Console",
+            "allowEC2SerialConsoleAccess": "EC2 Serial Console access",
+            "allow": "Allow",
+            "allowed": "Allowed",
+            "prevented": "Prevented",
+            "settingsSavedAlert": "Your EC2 Serial Console settings have been saved successfully.",
+            "settingsNotSavedAlert": "There was a problem updating your EC2 Serial Console settings.",
+            "serialConsoleError": "An error occurred loading EC2 Serial Console information. Please refresh or try again later.",
+            "buttons": {
+                "update": "Update",
+                "cancel": "Cancel"
+            }
+        }
+    },
+    "localZoneLongNames": {
+        "use2-mci1-az1": "US East (Kansas City)",
+        "use2-mci1-az2": "US East (Kansas City)",
+        "use1-pilot6-az1": "US East (Pilot 6)",
+        "use1-pilot3-az1": "US East (Pilot 3)",
+        "use1-pilot5-az1": "US East (Pilot 5)",
+        "use1-pilot1-az1": "US East (Pilot 1)",
+        "usw2-lax1-az1": "US West (Los Angeles)",
+        "usw2-pilot1-az1": "US West (Pilot 1)",
+        "usw2-lax1-az2": "US West (Los Angeles)",
+        "use1-bos1-az1": "US East (Boston)",
+        "use1-iah1-az1": "US East (Houston)",
+        "use1-mia1-az1": "US East (Miami)",
+        "use1-msp1-az1": "US East (Minneapolis)",
+        "usw2-pilot3-az1": "US West (Pilot 3)",
+        "usw2-sea1-az1": "US West (Seattle)",
+        "usw2-den1-az1": "US West (Denver)",
+        "use1-atl1-az1": "US East (Atlanta)",
+        "use1-dfw1-az1": "US East (Dallas)",
+        "use1-mci1-az1": "US East (Kansas City 2)",
+        "use1-phl1-az1": "US East (Philadelphia)",
+        "usw2-phx1-az1": "US West (Phoenix)",
+        "use1-chi1-az1": "US East (Chicago)",
+        "usw2-las1-az2": "US West (Las Vegas)",
+        "use1-nyc1-az1": "US East (New York)",
+        "usw2-las1-az1": "US West (Las Vegas)",
+        "usw2-pdx1-az1": "US West (Portland)",
+        "us-west-2-lgw-cp-test-lz-1a": "US West (cp-test-lz-1)",
+        "use1-atl1-az1-deprecated": "US East (Atlanta)",
+        "usw2-phx1-az1-deprecated": "US West (Phoenix)",
+        "usw2-sea1-az1-deprecated": "US West (Seattle)",
+        "aps1-ccu1-az2": "India (Kolkata) 2",
+        "aps1-del1-az2": "India (Delhi) 2",
+        "usw2-phx2-az1": "US West (Phoenix)"
+    },
+    "wavelengthZoneLongNames": {
+        "use2-pilot1-az1": "US East (Pilot 1)",
+        "euc1-pilot1-az1": "EU Central (Pilot 1)",
+        "use1-wl1-atl-wlz1": "US East (Verizon) - Atlanta",
+        "use1-pilot4-az1": "US East (Pilot 4)",
+        "use1-wl1-was-wlz1": "US East (Verizon) – Washington DC",
+        "use1-pilot2-az1": "US East (Pilot 2)",
+        "use1-wl1-bos-wlz1": "US East (Verizon) - Boston",
+        "use1-wl1-dfw-wlz1": "US East (Verizon) - Dallas",
+        "use1-wl1-mia-wlz1": "US East (Verizon) - Miami",
+        "use1-wl1-nyc-wlz1": "US East (Verizon) - New York",
+        "apne2-wl1-cjj-wlz1": "Asia Pacific (SKT) - Daejeon",
+        "apne2-pilot1-az1": "Asia Pacific (Pilot 1)",
+        "euw2-pilot2-az1": "EU West (Pilot 2)",
+        "euw2-pilot1-az1": "EU West (Pilot 1)",
+        "apne1-wl1-kix-wlz1": "Asia Pacific (KDDI) - Osaka",
+        "apne1-wl1-nrt-wlz1": "Asia Pacific (KDDI) - Tokyo",
+        "apne1-pilot1-az1": "Asia Pacific (Pilot 2)",
+        "usw2-wl1-sea-wlz1": "US West (Verizon) - Seattle",
+        "usw2-pilot2-az1": "US West (Pilot 2)",
+        "usw2-wl1-las-wlz1": "US West (Verizon) - Las Vegas",
+        "usw2-wl1-sfo-wlz1": "US West (Verizon) - San Francisco Bay Area",
+        "usw2-wl1-den-wlz1": "US West (Verizon) - Denver",
+        "euw2-wl1-lon-wlz1": "EU West (Vodafone) - London",
+        "use1-wl1-iah-wlz1": "US East (Verizon) - Houston",
+        "use1-wl1-mke-wlz1": "US East (Verizon) - Milwaukee",
+        "usw2-wl1-phx-wlz1": "US West (Verizon) - Phoenix",
+        "use1-wl1-clt-wlz1": "US East (Verizon) - Charlotte",
+        "use1-wl1-dtw-wlz1": "US East (Verizon) - Detroit",
+        "use1-wl1-msp-wlz1": "US East (Verizon) - Minneapolis",
+        "use1-wl1-tpa-wlz1": "US East (Verizon) - Tampa",
+        "usw2-wl1-lax-wlz1": "US West (Verizon) - Los Angeles",
+        "usw2-wl1-slc-wlz1": "US West (Verizon) - Salt Lake City",
+        "use1-wl1-chi-wlz1": "US East (Verizon) - Chicago",
+        "euc1-wl1-dtm-wlz1": "Europe (Vodafone) - Dortmund",
+        "use1-wl1-bna-wlz1": "US East (Verizon) - Nashville",
+        "apne2-wl1-sel-wlz1": "Asia Pacific (SKT) - Seoul",
+        "cac1-wl1-yto-wlz1": "Canada (BELL) - Toronto",
+        "euc1-wl1-ber-wlz1": "Europe (VODAFONE) - Berlin",
+        "euc1-wl1-muc-wlz1": "Europe (VODAFONE) - Munich",
+        "us-east-1-lgw-cp-test-wz-1a": "US East (cp-test-wz-1)",
+        "euw2-wl2-man-wlz1": "Europe (British Telecom) - Manchester",
+        "euw3-pilot1-az1": "EU West (Pilot 3)"
+    },
+    "broken": {
+        "message": "Something went wrong, we are working on correcting the issue.",
+        "retry": "Retry"
+    },
+    "resourceTable": {
+        "loadingText": "Loading...",
+        "emptyText": "No resources in this Region.",
+        "partialLoadingMessage": "Loading...",
+        "noMatchingResourceFound": "No matching resources found",
+        "preferencesText": {
+            "title": "Preferences",
+            "confirmLabel": "Confirm",
+            "cancelLabel": "Cancel",
+            "pageSizePreference": {
+                "pageSizeLabel": "Page size",
+                "itemDescription": "resources"
+            },
+            "wrapLines": {
+                "label": "Wrap lines",
+                "description": "Enable to wrap table cell content, disable to truncate text."
+            },
+            "contextMenu": {
+                "label": "Context menu",
+                "description": "Replace the browser context menu on table rows to allow quick actions."
+            },
+            "rowClickSelection": {
+                "label": "Row click selection",
+                "description": "Enable to allow clicking anywhere on a row item to select the item"
+            },
+            "compactTable": {
+                "label": "Compact table mode",
+                "description": "Enabled compact table mode across the application making table rows more compact."
+            },
+            "useRegexFilters": {
+                "label": "Use regular expression matching",
+                "description": "Enables regular expression support for client filters in the table instead of partial string match"
+            },
+            "useCaseSensitiveFilters": {
+                "label": "Use case sensitive matching",
+                "description": "Enables case sensitive matching for client, tag and free text filters in the table. If enabled, tag filters will use the API where possible which may improve responsiveness."
+            },
+            "attributeColumnPreference": {
+                "attributeTitle": "Attribute columns",
+                "attributeDescription": "Select visible attribute columns",
+                "searchPlaceholder": "Search for attribute columns",
+                "defaultColumn": "default"
+            }
+        },
+        "tagColumnsPreferencesText": {
+            "tagsTitle": "Tag columns",
+            "tagsDescription": "Select visible tag columns",
+            "tagsSelectedLabel": "visible tag columns",
+            "tagsFinishedText": "All tags searched",
+            "noMatchingTagsFound": "No matching tags found",
+            "loadingTags": "loading...",
+            "loadingError": "Error loading tags",
+            "searchPlaceholder": "Search for tags keys"
+        },
+        "filteringText": {
+            "tagGroupText": "Tags",
+            "groupPropertiesText": "Properties",
+            "clearFiltersText": "Clear filters",
+            "placeholderText": "Filter resources",
+            "filteringInProgress": "Filtering resources",
+            "errorText": "Error loading suggestions",
+            "filteringFailed": "Failed to filter resources",
+            "loadingText": "Loading suggestions...",
+            "groupValuesText": "Potential matches",
+            "propertyValuesText": " values",
+            "staticTagOptions": {
+                "empty": "(empty)",
+                "allValues": "All values",
+                "notTagged": "Not tagged"
+            },
+            "apiFilters": "API filters",
+            "clientFilters": "Client filters",
+            "propertyFilterText": {
+                "filteringAriaLabel": "your choice",
+                "dismissAriaLabel": "Dismiss",
+
+                "filteringPlaceholder": "Search",
+                "groupValuesText": "Values",
+                "groupPropertiesText": "Properties",
+                "operatorsText": "Operators",
+
+                "operationAndText": "and",
+                "operationOrText": "or",
+
+                "operatorLessText": "Less than",
+                "operatorLessOrEqualText": "Less than or equal",
+                "operatorGreaterText": "Greater than",
+                "operatorGreaterOrEqualText": "Greater than or equal",
+                "operatorContainsText": "Contains",
+                "operatorDoesNotContainText": "Does not contain",
+                "operatorEqualsText": "Equals",
+                "operatorDoesNotEqualText": "Does not equal",
+
+                "editTokenHeader": "Edit filter",
+                "propertyText": "Property",
+                "operatorText": "Operator",
+                "valueText": "Value",
+                "cancelActionText": "Cancel",
+                "applyActionText": "Apply",
+                "allPropertiesLabel": "All properties",
+
+                "tokenLimitShowMore": "Show more",
+                "tokenLimitShowFewer": "Show fewer",
+                "clearFiltersText": "Clear filters",
+                "removeTokenButtonAriaLabel": "Remove token"
+            }
+        },
+        "sorting": {
+            "sortingTemplate": "Sorting resources...",
+            "sortingFailed": "Failed to sort resources",
+            "cancelSorting": "Remove sorting"
+        },
+        "zoneOverrides": {
+            "loadingText": "Loading zones...",
+            "emptyText": "No zones in this Region.",
+            "filterPlaceholderText": "Filter Zones",
+            "sortingTemplate": "Sorting zones...",
+            "noMatchingResourceFound": "No matching zones found",
+            "errorLoading": "Error loading zones"
+        },
+        "attributes": {
+            "id": "ID",
+            "zoneName": "Zone name",
+            "location": "Location",
+            "zoneType": "Zone Type",
+            "groupName": "Group Name",
+            "optInStatus": "Opt-in Status"
+        }
+    }
+}
+�}����           b�ضDq�b�ض   �    O^partitionKey=%28https%2Camazon.com%29,a,:https://d35boitzyn91zk.cloudfront.net/2022-06-20T14-16-13_566d7d9ada0deaead541966803ac2df3f1c51a837c289068ff724c499308ba57/Content/content_en.json strongly-framed 1 security-info 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 request-method GET request-Origin https://us-east-1.console.aws.amazon.com response-head HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 45921
+Access-Control-Allow-Origin: https://us-east-1.console.aws.amazon.com
+Access-Control-Max-Age: 3000
+Access-Control-Expose-Headers: Content-Length, Content-Type, Connection, Date, ETag, Server, x-amz-delete-marker, x-amz-id-2, x-amz-request-id, x-amz-version-id, x-amz-server-side-encryption-customer-key, x-amz-server-side-encryption-customer-algorithm
+Access-Control-Allow-Credentials: true
+Last-Modified: Wed, 29 Jun 2022 08:57:41 GMT
+Accept-Ranges: bytes
+Server: AmazonS3
+Date: Fri, 01 Jul 2022 01:02:11 GMT
+ETag: "87c524b5856c9fc59e416cf4d69fe608"
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 6228711fb83981b16d217d4cf75fee64.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: LIS50-C1
+X-Amz-Cf-Id: RpB7igLPMySVRmFvPr0FLCd7qscPbypHHokLsicqfSJaOKHKXEuoWw==
+Age: 37774
+ original-response-headers Content-Type: application/json
+Content-Length: 45921
+Connection: keep-alive
+Access-Control-Allow-Origin: https://us-east-1.console.aws.amazon.com
+Access-Control-Max-Age: 3000
+Access-Control-Expose-Headers: Content-Length, Content-Type, Connection, Date, ETag, Server, x-amz-delete-marker, x-amz-id-2, x-amz-request-id, x-amz-version-id, x-amz-server-side-encryption-customer-key, x-amz-server-side-encryption-customer-algorithm
+Access-Control-Allow-Credentials: true
+Last-Modified: Wed, 29 Jun 2022 08:57:41 GMT
+Accept-Ranges: bytes
+Server: AmazonS3
+Date: Fri, 01 Jul 2022 01:02:11 GMT
+ETag: "87c524b5856c9fc59e416cf4d69fe608"
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 6228711fb83981b16d217d4cf75fee64.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: LIS50-C1
+X-Amz-Cf-Id: RpB7igLPMySVRmFvPr0FLCd7qscPbypHHokLsicqfSJaOKHKXEuoWw==
+Age: 37774
+ ctid 1 net-response-time-onstart 1134 net-response-time-onstop 1147   �a
